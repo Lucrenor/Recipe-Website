@@ -9,11 +9,18 @@ function Cuisine() {
   let params = useParams();
   
 
-  const getCuisine =async (name) => {
-      const data = await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=ff4c14fe16d14cbf8524945f5fe0b1c9&cuisine=${name}`);
-      const recipes = await data.json();
-      setCuisine(recipes.results);
-  }
+  const getCuisine = async (name) => {
+    const data = await fetch(`http://127.0.0.1:5000/api/get_cuisine`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name: name }),
+    });
+
+    const recipes = await data.json();
+    setCuisine(recipes.results);
+};
 
   useEffect(() => {
     getCuisine(params.type);

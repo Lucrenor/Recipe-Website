@@ -13,11 +13,18 @@ function Searched() {
     },[params.search]);
 
 
-    const getSearched =async (name) => {
-        const data = await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=ff4c14fe16d14cbf8524945f5fe0b1c9&query=${name}`);
-        const recipes = await data.json();
-        setSearchedRecipes(recipes.results);
-    }
+    const getSearched = async (name) => {
+      const data = await fetch(`http://127.0.0.1:5000/api/search`, {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ name: name }),
+      });
+  
+      const recipes = await data.json();
+      setSearchedRecipes(recipes.results);
+  };
 
   return(
     <Grid>
