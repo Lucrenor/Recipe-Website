@@ -8,11 +8,17 @@ function Recipe() {
   const[activeTab, setActiveTab] = useState("instructions:");
   
   const fetchDetails = async () => {
-    const data = await fetch(`https://api.spoonacular.com/recipes/${params.name}/information?apiKey=ff4c14fe16d14cbf8524945f5fe0b1c9`);
+    const data = await fetch(`http://127.0.0.1:5000/api/instruction_data`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name: params.name }),
+    });
     const detailData = await data.json();
     setDetails(detailData);
   }
-  
+
   useEffect(() => {
     fetchDetails();
 },[params.name]);

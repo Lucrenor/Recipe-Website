@@ -1,5 +1,6 @@
 import Pages from "./pages/Pages";
 import Category from "./components/Category";
+import AddRecipeButton from "./components/AddRecipeButton"
 import {BrowserRouter, Link} from 'react-router-dom';
 import Search from "./components/Search";
 import styled from 'styled-components';
@@ -14,6 +15,7 @@ function App() {
           <Logo to={'/'}>EasyRecipes</Logo> 
         </Nav>
         <Search />
+        <AddRecipeButton />
         <Category />
         <Pages />
       </BrowserRouter>

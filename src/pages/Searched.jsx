@@ -23,17 +23,17 @@ function Searched() {
       });
   
       const recipes = await data.json();
-      setSearchedRecipes(recipes.results);
+      setSearchedRecipes(recipes);
   };
 
   return(
     <Grid>
         {searchedRecipes.map((item) => {
             return(
-                <Card key={item.id}>
-                  <Link to={'/recipe/'+item.id}>
-                    <img src={item.image} alt="" />
-                    <h4>{item.title}</h4>
+                <Card key={item.Recipe_ID}>
+                  <Link to={'/recipe/'+item.Recipe_ID}>
+                    <img src={item.imageUrl} alt="" /> 
+                    <h4>{item.Recipe_name}</h4>
                   </Link>
                 </Card>
             )

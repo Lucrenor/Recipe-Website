@@ -19,23 +19,25 @@ function Cuisine() {
     });
 
     const recipes = await data.json();
-    setCuisine(recipes.results);
+    setCuisine(recipes);
 };
 
   useEffect(() => {
     getCuisine(params.type);
-    console.log(params.type);
   },[params.type]);
+
 
   return(
     <Grid>
         {cuisine.map((item) =>{
+          console.log(item.imageUrl)
           return(
+          
           <Grid>
-            <Card key={item.id}>
-              <Link to={'/recipe/'+item.id}>
-              <img src={item.image} alt="" />
-              <h4>{item.title}</h4>
+            <Card key={item.Recipe_ID}>
+              <Link to={'/recipe/'+item.Recipe_ID}>
+              <img src={item.imageUrl} alt="" />
+              <h4>{item.recipe_name}</h4>
               </Link>
             </Card>
           </Grid>
