@@ -166,7 +166,7 @@ function AddForm() {
         <StyledLabel>
         Image Url:
           <InputField
-            type="text"
+            type="file"
             name="ImgUrl"
             value={formData.ImgUrl}
             onChange={handleChange}

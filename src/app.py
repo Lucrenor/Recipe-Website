@@ -18,7 +18,8 @@ class Recipe:
 
 class RecipeDatabase():
     def __init__(self):
-        pass
+        self.conn, self.cursor = self.connect_database()
+
 
     def connect_database(self):
         conn = psycopg2.connect(
@@ -68,38 +69,21 @@ class RecipeDatabase():
     
 
 
-class Ingredients():
-    def __init__(self):
-        pass
-
-    def get_ingredient_data(self, recipe_id):
-        self.cuisine_name = recipe_id
-        recipe_to_search = recipe_id
-        cuisine_data = f"SELECT * FROM recipes WHERE recipe_id = '{recipe_to_search}' ORDER BY recipe_id;"
-        cursor.execute(cuisine_data)
-        rows = cursor.fetchall()
-        colnames = [desc[0] for desc in cursor.description][11]
-        result = []
-        for row in rows:
-            d_data = {}
-            d_data[colnames] = row[11]
-            result.append(d_data)
-        print(result)
-        return result
 
 
 
-class Instructions():
-    def __init__(self):
-        pass
+
+class Info():
+    def __init__(self, recipe_db):
+        self.recipe_db = recipe_db
     
-    def get_instruction_data(self, recipe_id):
+    def get_recipe_info(self, recipe_id):
         self.cuisine_name = recipe_id
         recipe_to_search = recipe_id
         cuisine_data = f"SELECT * FROM recipes WHERE recipe_id = '{recipe_to_search}' ORDER BY recipe_id;"
         cursor.execute(cuisine_data)
         rows = cursor.fetchall()
-        colnames = [desc[0] for desc in cursor.description][1:12]
+        colnames = [desc[0] for desc in cursor.description][1:]
         result = []
         for row in rows:
             d_data = {"Recipe_ID": row[0]}
@@ -112,8 +96,8 @@ class Instructions():
       
 
 class Search:
-    def __init__(self):
-        pass
+    def __init__(self, recipe_db):
+        self.recipe_db = recipe_db
 
     def search(self, search_term):
         self.search_term = search_term
@@ -140,10 +124,10 @@ class Search:
 app = Flask(__name__)
 CORS(app)
 
+
 recipe_db = RecipeDatabase()
-ingredient = Ingredients()
-instruction = Instructions()
-search = Search()
+info_handler = Info(recipe_db)
+search_handler = Search(recipe_db)
 
 
 
@@ -156,21 +140,13 @@ def APİ_get_cuisine_recipes():
     return jsonify(cuisine_data)
 
 
-@app.route('/api/ingredient_data', methods=['POST'])
-def APİ_get_ingredient_data():
+@app.route('/api/info', methods=['POST'])
+def APİ_get_info():
     request_data = request.get_json() 
     #Buradaki name İtalian vs vs.
     name = request_data.get("name")
-    ingredient_data = ingredient.get_ingredient_data(name)
+    ingredient_data = info_handler.get_recipe_info(name)
     return jsonify(ingredient_data)
-
-@app.route('/api/instruction_data', methods=['POST'])
-def APİ_get_instruction_data():
-    request_data = request.get_json() 
-    #Buradaki name İtalian vs vs.
-    name = request_data.get("name")
-    Instruction_data = instruction.get_instruction_data(name)
-    return jsonify(Instruction_data)
 
 
 @app.route('/api/search', methods=['POST'])
@@ -178,15 +154,17 @@ def APİ_search():
     request_data = request.get_json() 
     #Buradaki name İtalian vs vs.
     name = request_data.get("name")
-    searched_data =search.search(name)
+    searched_data =search_handler.search(name)
 
     return jsonify(searched_data)
+
 
 #Connect recipe database
 conn, cursor = recipe_db.connect_database()
 
 #Get recipe data
 recipe_data = recipe_db.get_recipe_details()
+
 
 
 

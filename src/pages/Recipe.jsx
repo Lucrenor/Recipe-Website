@@ -4,55 +4,71 @@ import {useParams} from 'react-router-dom';
 
 function Recipe() {
   let params = useParams();
-  const [details, setDetails] = useState({});
+  const [instructions, setInstructions] = useState([]);
+  const [ingredients, setIngredients] = useState([]);
   const[activeTab, setActiveTab] = useState("instructions:");
-  
-  const fetchDetails = async () => {
-    const data = await fetch(`http://127.0.0.1:5000/api/instruction_data`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ name: params.name }),
-    });
-    const detailData = await data.json();
-    setDetails(detailData);
+
+  const fetchInstructions = async (name) => {
+    const data = await fetch(`http://127.0.0.1:5000/api/info`, {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ name: name }),
+  });
+    const InstrucionData = await data.json();
+    setInstructions(InstrucionData);
   }
 
   useEffect(() => {
-    fetchDetails();
-},[params.name]);
+    fetchInstructions(params.name);
+  },[params.name]);
 
-
-  return (
-    <DetailWrapper>
-      <div>
-        <h2>{details.title}</h2>
-        <img src={details.image} alt="" />
-      </div>
-      <Info>
-        <Button className={activeTab === 'instructions' ? 'active' :''} onClick={()=> setActiveTab("instructions")}>Instructions</Button>
-        <Button className={activeTab === 'ingredients' ? 'active' :''} onClick={() => setActiveTab("ingredients")}>Ingredients</Button>
-        {activeTab === 'instructions' &&(
-          <div>
-          <h3>Summary:</h3>
-          <h3 dangerouslySetInnerHTML={{__html: details.summary}}></h3>
-          <h3>Preperation Time:</h3>
-          <h3>{details.readyInMinutes} Minutes</h3>
-          <h3>Instructions:</h3>
-          <h3 dangerouslySetInnerHTML={{__html: details.instructions}}></h3>
+return (
+  <div>
+    {instructions.map((instructions, Recipe_ID) => (
+    <DetailWrapper key={Recipe_ID}>
+        <div >
+          <h2>{instructions.recipe_name}</h2>
+          <img src={instructions.imageUrl} height="350px" width="350px" alt="" />
         </div>
-        )}
+        <Info>
+          <Button className={activeTab === 'instructions' ? 'active' :''} onClick={()=> setActiveTab("instructions")}>Instructions</Button>
+          <Button className={activeTab === 'ingredients' ? 'active' :''} onClick={() => setActiveTab("ingredients")}>Ingredients</Button>
+          {activeTab === 'instructions' &&(
+            <div>
+            <h2>Summary:</h2>
+            <h3>Diet Type:</h3>
+            <p>{instructions.dietary_needs}</p>
+            <h3>Cuisine:</h3>
+            <p>{instructions.cuisine}</p>
+            <h3>Meal Type:</h3>
+            <p>{instructions.meal_type}</p>
+            <h3>Preparation Time:</h3>
+            <p>{instructions.preparation_time} Minutes</p>
+            <h3>Calorie:</h3>
+            <p>{instructions.calorie} kcal</p>
+            <h3>Carbohydrates:</h3>
+            <p>{instructions.carbohydrates} Grams</p>
+            <h3>Protein:</h3>
+            <p>{instructions.protein} Grams</p>
+            <h3>Fat:</h3>
+            <p>{instructions.fat} Grams</p>
+            <h3>Instructions:</h3>
+            <p>{instructions.instructions}</p>
+          </div>
+          )}
+        
         {activeTab === 'ingredients' && (
           <ul>
           <h3>Ingredients:</h3>
-          {details.extendedIngredients.map((ingredient) =>(
-            <li key={ingredient.id}>{ingredient.original}</li>
-          ))}
+          <p>{instructions.ingredients}</p>
         </ul>
         )}
       </Info>
     </DetailWrapper>
+    ))}
+    </div>
   )
 }
 
