@@ -1,0 +1,36 @@
+recipe_id,recipe_name,dietary_needs,cuisine,meal_type,preparation_time,calorie,carbohydrates,protein,fat,instructions,ingredients,imageurl
+138,Ýskender,High protein,Asian,Dinner,40,500,45,30,25,Instruction,Ingredients,/img/e1760dd5-44ae-4203-8973-87801710720a_iskender.jpg
+2,Vegetable Stir-Fry,Vegetarian,Asian,Dinner,20,280,35,10,14,"Stir-fry mixed vegetables with sauce, serve over rice.","Assorted vegetables (bell peppers, broccoli, carrots, mushrooms, etc.), soy sauce","/img/VegetableStirFry.jpeg
+"
+16,Grilled Salmon,Keto,American,Lunch,20,380,5,40,22,"Season salmon, grill until done.",Salmon fillet,/img/GrilledSalmon.png
+1,Tuna Salad Sandwich,High Protein,American,Lunch,15,320,30,25,12,"Mix tuna with mayo, add veggies, assemble sandwich.","Canned tuna, mayonnaise, whole wheat bread, lettuce, tomato",/img/TunaSaladSandwich.jpeg
+3,Honey Garlic Glazed Salmon,Pescatarian,American,Dinner,25,380,15,30,20,"Coat salmon with honey garlic glaze, bake until done.","Salmon fillet, honey, garlic, olive oil",/img/HoneyGarlicGlazedSalmon.jpeg
+4,Cauliflower Pizza,Gluten-Free,European,Dinner,40,420,30,25,22,"Make crust with cauliflower, add toppings, bake.","Cauliflower, mozzarella cheese, eggs, tomato sauce, toppings of choice","/img/CauliflowerPizza.jpeg
+"
+22,Mushroom Risotto,Vegetarian,European,Dinner,40,420,60,10,18,"Cook mushrooms and rice slowly, stirring with broth.","Risotto rice, mushrooms, vegetable broth",/img/MushroomRisotto.jpeg
+23,Tofu Stir-Fry,Vegan,Asian,Dinner,30,350,30,25,15,"Stir-fry tofu and vegetables, add soy sauce.","Tofu, assorted vegetables (bell peppers, broccoli, carrots, etc.), soy sauce",/img/TofuStirFry.jpeg
+24,Mango Avocado Salsa,Vegetarian,American,Snack,10,150,20,2,8,"Dice mango and avocado, mix with lime juice and cilantro.","Mango, avocado, lime juice, cilantro",/img/MangoAvocadoSalsa.jpeg
+25,Eggplant Parmesan,Vegetarian,European,Dinner,50,480,35,20,30,"Bread and bake eggplant, layer with marinara and cheese.","Eggplant, marinara sauce, mozzarella cheese","/img/EggplantParmesan.jpeg
+"
+26,Greek Yogurt Parfait,Low Calorie,European,Breakfast,5,200,30,15,5,"Layer yogurt, granola, and fruits in a glass.","Greek yogurt, granola, assorted fruits",/img/GreekYogurtParfait.jpeg
+27,Lemon Garlic Shrimp Scampi,Pescatarian,European,Dinner,30,410,30,25,18,"Saute shrimp with lemon garlic sauce, serve over pasta.","Shrimp, lemon, garlic, pasta",/img/LemonGarlicShrimpScampi.jpeg
+28,Lentil Soup,Vegan,Asian,Lunch,40,300,50,15,5,"Simmer lentils and vegetables with broth, season to taste.","Lentils, assorted vegetables (carrots, celery, onions, etc.), vegetable broth",/img/LentilSoup.jpeg
+29,Teriyaki Chicken,Low Fat,Asian,Dinner,35,400,25,30,10,"Marinate chicken, grill or stir-fry with teriyaki sauce.","Chicken breast, teriyaki sauce",/img/TeriyakiChicken.jpeg
+30,Berry Smoothie Bowl,Vegetarian,American,Breakfast,10,250,40,10,5,"Blend berries and yogurt, top with granola and nuts.","Assorted berries, yogurt, granola, nuts",/img/BerrySmoothieBowl.jpeg
+7,Pineapple Fried Rice,Vegetarian,Asian,Dinner,30,360,45,12,16,"Stir-fry rice, pineapple, and vegetables, add soy sauce.","Rice, pineapple, mixed vegetables, soy sauce",/img/PineappleFriedRice.webp
+9,Vegan Curry,Vegan,Asian,Dinner,45,300,40,15,10,"Prepare vegetables, simmer with curry sauce.","Assorted vegetables (potatoes, carrots, bell peppers, peas), curry sauce",/img/VeganCurry.webp
+11,Blueberry Pancakes,Vegetarian,American,Breakfast,30,400,50,10,18,"Mix batter, cook pancakes, top with blueberries.","Flour, blueberries, milk, eggs",/img/BlueberryPancakes.webp
+21,Shrimp Tacos,Pescatarian,American,Dinner,30,400,35,20,15,"Saute shrimp, assemble tacos with toppings.","Shrimp, taco shells, toppings of choice",/img/ShrimpTacos.webp
+5,Spinach and Feta Stuffed Chicken,Low Carb,European,Dinner,45,460,15,40,28,"Stuff chicken breasts with spinach and feta, bake.","Chicken breast, spinach, feta cheese",/img/SpinachandFetaStuffedChicken.jpeg
+6,Veggie Omelette,Vegetarian,American,Breakfast,15,280,10,20,18,"Whisk eggs, add veggies, cook in a pan.","Eggs, bell peppers, onion, spinach",/img/VeggieOmelette.jpeg
+8,Cucumber Avocado Rolls,Vegetarian,American,Snack,10,180,25,5,10,"Slice cucumber, fill with avocado and roll.","Cucumber, avocado",/img/CucumberAvocadoRolls.jpeg
+10,Chicken Caesar Salad,High Protein,American,Lunch,20,350,15,30,18,"Toss chicken, lettuce, croutons, and Caesar dressing.","Chicken breast, lettuce, croutons, Caesar dressing",/img/ChickenCaesarSalad.jpeg
+12,Mediterranean Pasta Salad,Vegetarian,European,Lunch,25,320,40,15,12,"Mix cooked pasta, veggies, and feta with vinaigrette.","Pasta, assorted vegetables (tomatoes, cucumbers, olives, etc.), feta cheese, vinaigrette",/img/MediterraneanPastaSalad.jpeg
+14,Chocolate Chia Pudding,Vegetarian,Asian,Dessert,5,220,30,5,10,"Mix chia seeds, cocoa, and milk, refrigerate.","Chia seeds, cocoa powder, milk",/img/ChocolateChiaPudding.jpeg
+15,Pasta Carbonara,Gluten-Free,European,Dinner,30,450,30,25,20,"Cook pasta, mix with bacon, eggs, and cheese.","Pasta, bacon, eggs, parmesan cheese",/img/PastaCarbonara.jpeg
+17,Chicken Alfredo,High Protein,European,Dinner,35,550,45,30,28,"Cook chicken, mix with Alfredo sauce, serve over pasta.","Chicken breast, Alfredo sauce, pasta",/img/ChickenAlfredo.jpeg
+18,Quinoa Salad,Vegetarian,European,Lunch,15,320,50,12,8,"Cook quinoa, toss with vegetables and vinaigrette.","Quinoa, assorted vegetables (bell peppers, tomatoes, cucumbers, etc.), vinaigrette",/img/QuinoaSalad.jpeg
+20,Caprese Salad,Vegetarian,European,Lunch,10,250,10,12,18,"Slice tomatoes and mozzarella, drizzle with balsamic glaze.","Tomatoes, mozzarella cheese, balsamic glaze","/img/CapreseSalad.jpeg
+"
+13,Roasted Vegetable Wrap,Vegetarian,American,Lunch,25,290,35,10,15,"Roast vegetables, wrap in tortilla with hummus.","Assorted vegetables (zucchini, bell peppers, onions, etc.), tortilla, hummus",/img/RoastedVegetableWrap.jpeg
+19,Beef Stir-Fry,Low Carb,Asian,Dinner,25,480,20,35,25,"Stir-fry beef and vegetables, add sauce, serve over rice.","Beef strips, assorted vegetables (bell peppers, broccoli, carrots, etc.), soy sauce",/img/BeefStirFry.jpeg
