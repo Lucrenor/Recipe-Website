@@ -1,9 +1,9 @@
 # Source Code for easyrecipes Website
 
 #Tech Stack:
-  #Database: PostgreSQL
-  #Back-end: Python/flask
-  #Front-end: React
+  Database: PostgreSQL
+  Back-end: Python/flask
+  Front-end: React
 
 #Install imported libraries/tools using pip commands in python.
 
